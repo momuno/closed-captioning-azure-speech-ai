@@ -9,14 +9,14 @@ We will be using youtube videos for our source of speech which would be the inpu
    1. [A power supply](https://thepihut.com/products/raspberry-pi-psu-uk)
    2. [Micro SD card](https://thepihut.com/products/sandisk-microsd-card-class-10-a1)
    3. [MicroSD Card Reader](https://thepihut.com/products/mini-usb-2-0-microsd-card-reader)
-2. [Mic Usb plug n Play](https://thepihut.com/products/mini-usb-microphone)
+2. [Microphone Usb plug n play](https://thepihut.com/products/mini-usb-microphone)
    : Any USB plug and play device can do the job.
 3. [Lcd Screen](https://thepihut.com/products/7-capacitive-touchscreen-lcd-low-power-800x480)
    : We are using this for rich text quality and setting up most of our stuff. You can use any other compatible displays.
 4. [Pair of Keyboard and Mouse](https://www.amazon.eg/-/en/HP-CS700-Wireless-Keyboard-Mouse/dp/B07M82KFVB)
    : A basic keyboard mouse for using as input devices on raspberry.
    
-## Setting up Raspberry 4
+## Setting up RaspberryPi 4
 Raspberry Pi can run a fully Desktop OS which can be loaded onto an MicroSD card.
 
 Now on your desktop computer Download and Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
