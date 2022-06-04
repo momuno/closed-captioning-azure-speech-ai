@@ -73,3 +73,114 @@ Connect the keyboard and mouse, i have a wireless plug and play usb dongle.
 Connect the power USB type C.
 
 ![typecpower.png](assets/typecpower.png)
+
+Ok looking over everything how they should look like.
+
+## Setting up the OS and other dependencies
+
+Ok first power up the device and set up the initial setup, this part would pretty much self-explanatory, but it would have following steps.
+   1. You will be presented with initial option to connect to internet over wifi (or you can connect with Ethernet cable).
+   2. Select the keyboard layout according and also the timezone.
+   3. This bit is important you need make a user account.
+   ![useraccount.png](assets/useraccount.png)
+      **note** instead of Require my password to log in select the login automatically.
+      
+### let make the environment and other dependencies.
+Open terminal on desktop.
+
+let's make a directory using terminal.
+```bash
+mkdir work
+cd work
+```
+Now we setup .Net Framework as the code is in C#
+```bash
+curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current
+```
+Once the files are installed we set the environment variables.
+```bash
+echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
+source ~/.bashrc
+```
+Check and verify the installation
+```bash
+dotnet --version
+```
+Now we will be installing the dependencies for the speech sdk.
+```bash
+sudo apt-get update
+sudo apt-get install build-essential libssl-dev libasound2 wget 
+```
+There is a high chance you will be having trouble in installing libssl1.0.0 as its not available for ubuntu 22. But its one of the core required dependencies.
+What we will do is manually install it.
+```bash
+wget http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1n-0+deb11u1_arm64.deb
+```
+and we simply install from the file
+```bash
+sudo apt install -f ./libssl1.1_1.1.1n-0+deb11u1_arm64.deb
+```
+## Lets Signup for azure cognitive services and get our api keys.
+
+https://azure.microsoft.com/en-us/free/
+
+You can sign up for a free trial account with $200 azure credit for 30 days.o
+
+once presented with the dashboard. Select more service (assuming you will already have trial  subscription setup)
+![azuredash.png](assets/azuredash.png)
+
+now select the cognitive services.
+
+![cogserv.png](assets/cogserv.png)
+
+Now create a new speech service
+
+![speechserv.png](assets/speechserv.png)
+
+What you will need from here once setup speech service. are the keys and the region.
+copy the key anyone would do and copy the location region.
+
+![keyslocation.png](assets/keyslocation.png)
+
+## Running the code on the RaspberryPi
+
+Download install git
+
+```bash
+sudo apt install git
+```
+
+lets go back in the folder we created
+```bash
+cd work
+```
+clone this repository, go to the folder with the code
+```bash
+git clone https://github.com/m-mohsin-ali/closed-captioning-azure-speech-ai
+cd closed-captioning-azure-speech-ai
+cd code
+```
+Now lets put your keys in the code
+```bash
+nano Program.cs
+```
+```C#
+ class Program
+    {
+
+        static string YourSubscriptionKey = "Enter your Key Here";
+        static string YourServiceRegion = "Enter your Region here";
+...
+```
+Now press crtl+x and save/overwrite.
+
+let's add the Azure Speech Sdk lib/package to the code directory
+```bash
+dotnet add package Microsoft.CognitiveServices.Speech
+```
+Now lets run and see the magic
+```bash
+dotnet build
+dotnet run
+```
