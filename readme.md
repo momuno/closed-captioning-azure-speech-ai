@@ -16,7 +16,7 @@ We will be using youtube videos for our source of speech which would be the inpu
 4. [Pair of Keyboard and Mouse](https://www.amazon.eg/-/en/HP-CS700-Wireless-Keyboard-Mouse/dp/B07M82KFVB)
    : A basic keyboard mouse for using as input devices on raspberry.
    
-## Setting up RaspberryPi 4
+## Download and Install RaspberryPi 4 OS
 Raspberry Pi can run a fully Desktop OS which can be loaded onto an MicroSD card.
 
 Now on your desktop computer Download and Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
@@ -40,3 +40,36 @@ From there we select the ubuntu 22 64 bit version.
 Now after clicking write you see a similar loading bar. let it complete the process.
 
 ![rpiwriting.png](assets/rpiwriting.png)
+
+Ok now let's safely eject the sd card and start setting everything over our raspberry pi.
+
+## Setting up the RaspberryPi 4 and Power On
+
+First we insert the sd card into the raspberry pi 4 which can be found underneath the board.
+
+![microsd.png](assets/microsd.png)
+
+Connect the display via USB (To, Power/Capacitive Touch Input) and HDMI ports.
+
+1. HDMI (Display) to Micro-HDMI (RaspberryPi).
+
+![hdmidisplay.png](assets/hdmidisplay.png)
+![mhdmi.png](assets/mhdmi.png)
+
+2. Micro-USB (Display) to USB (RaspberryPi)
+
+![musbdisplay.png](assets/musbdisplay.png)
+![usbdisplay.png](assets/usbdisplay.png)
+
+Connecting USB Mic to an usb port.
+
+![mic.png](assets/mic.png)
+![micusb.png](assets/micusb.png)
+
+Connect the keyboard and mouse, i have a wireless plug and play usb dongle.
+
+![knmusbw.png](assets/knmusbw.png)
+
+Connect the power USB type C.
+
+![typecpower.png](assets/typecpower.png)
