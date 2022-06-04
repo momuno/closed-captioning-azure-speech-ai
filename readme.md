@@ -83,9 +83,10 @@ Ok first power up the device and set up the initial setup, this part would prett
    2. Select the keyboard layout according and also the timezone.
    3. This bit is important you need make a user account.
    ![useraccount.png](assets/useraccount.png)
-      **note** instead of Require my password to log in select the login automatically.
       
-### let make the environment and other dependencies.
+**note** instead of Require my password to log in select the login automatically.
+      
+### Now to install other dependencies.
 Open terminal on desktop.
 
 let's make a directory using terminal.
@@ -93,7 +94,7 @@ let's make a directory using terminal.
 mkdir work
 cd work
 ```
-Now we setup .Net Framework as the code is in C#
+### Now we setup .Net Framework as the code is in C#
 ```bash
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current
 ```
@@ -107,7 +108,8 @@ Check and verify the installation
 ```bash
 dotnet --version
 ```
-Now we will be installing the dependencies for the speech sdk.
+### Now we will be installing the dependencies for the Azure speech sdk.
+
 ```bash
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev libasound2 wget 
@@ -184,3 +186,4 @@ Now lets run and see the magic
 dotnet build
 dotnet run
 ```
+![examplerun.png](assets/examplerun.png)
