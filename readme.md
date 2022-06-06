@@ -160,8 +160,7 @@ cd work
 clone this repository, go to the folder with the code
 ```bash
 git clone https://github.com/m-mohsin-ali/closed-captioning-azure-speech-ai
-cd closed-captioning-azure-speech-ai
-cd code
+cd closed-captioning-azure-speech-ai/code/AzureSpeechCC
 ```
 Now lets put your keys in the code
 ```bash
