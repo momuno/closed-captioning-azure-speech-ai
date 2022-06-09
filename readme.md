@@ -185,4 +185,5 @@ Now lets run and see the magic
 dotnet build
 dotnet run
 ```
-![examplerun.png](assets/examplerun.png)
+https://user-images.githubusercontent.com/46184494/172898282-508199d7-9ae4-488f-82c9-811080fb8470.mp4
+
