@@ -1,168 +1,166 @@
-# A Closed Captioning Example on RaspberryPi using Azure Cognitive services
+# Raspberry Pi Live Closed Captioning with Azure Cognitive Services
 
-We are going to try out the Azure Cognitive services from Microsoft and build an example of the Speech to text on a IoT device like raspberry.
-We will be using youtube videos for our source of speech which would be the input, we will consume the speech data via Mic connected to raspberry and display the converted text in real time over a LCD screen.
+https://user-images.githubusercontent.com/46184494/172901241-2b21438e-2600-4397-a6b6-4cd5b5c7c63d.mp4
 
-## Hardware Requirement
-1. [RaspberryPi](https://thepihut.com/collections/featured-products/products/raspberry-pi-4-model-b) 
-   : We will be using the 4GB variant.
-   1. [A power supply](https://thepihut.com/products/raspberry-pi-psu-uk)
+
+This project uses Microsoft Azure Cognitive Services speech recognition to generate real-time captions on a Raspberry Pi. You can also run this project in a .NET framework on a laptop or computer!
+
+Speech is captured via a USB microphone and run through a .NET framework which calls Azure Cognitive Services speech-to-text service, which then displays convert text in real-time captions to an LCD screen. You can also generate captions on [a remote screen via SSH](https://github.com/microsoft/rpi-resources). 
+
+
+## Hardware Requirements
+1. [Raspberry Pi](https://thepihut.com/collections/featured-products/products/raspberry-pi-4-model-b) 
+   : We will be using the 4GB version.
+   1. [5V power supply](https://thepihut.com/products/raspberry-pi-psu-uk)
    2. [Micro SD card](https://thepihut.com/products/sandisk-microsd-card-class-10-a1)
    3. [MicroSD Card Reader](https://thepihut.com/products/mini-usb-2-0-microsd-card-reader)
 2. [Microphone Usb plug n play](https://thepihut.com/products/mini-usb-microphone)
-   : Any USB plug and play device can do the job.
+   : Any USB plug and play device works.
 3. [Lcd Screen](https://thepihut.com/products/7-capacitive-touchscreen-lcd-low-power-800x480)
-   : We are using this for rich text quality and setting up most of our stuff. You can use any other compatible displays.
+   : We are using this for rich text quality. You can use any other compatible displays.
+   : You may also skip the scree and access the Pi via SSH.
 4. [Pair of Keyboard and Mouse](https://www.amazon.eg/-/en/HP-CS700-Wireless-Keyboard-Mouse/dp/B07M82KFVB)
-   : A basic keyboard mouse for using as input devices on raspberry.
+   : A basic keyboard and mouse for using as input devices on a Raspberry Pi.
    
 ## Download and Install RaspberryPi 4 OS
-Raspberry Pi can run a fully Desktop OS which can be loaded onto an MicroSD card.
-
-Now on your desktop computer Download and Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
-
 ![RPiIMain.png](assets/RPiIMain.png)
 
-First we select storage device, connect the Microsd card to card reader connect to computer.
-
-Now you will be seeing the connected device as storage device, select it.
+1. On your desktop computer, download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 
 ![rpisd.png](assets/rpisd.png)
 
-We will be using Ubuntu Desktop 64 bit, so first select the other available OS. (Although Raspbian does come in a 64bit version but Ubuntu seem to have better support for the architecture and available software)
+1. Select storage device, insert the microSD card into your computer (or via a card reader). Select the connected device as storage device.
 
 ![rpiotheros.png](assets/rpiotheros.png)
 
-From there we select the ubuntu 22 64 bit version.
+1. We will be using Ubuntu Desktop 64 bit. Select the "Other available OS. 
+
+   | Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
 
 ![ubuntu22.png](assets/ubuntu22.png)
 
-Now after clicking write you see a similar loading bar. let it complete the process.
+1. Select the ubuntu 22 64 bit version.
 
 ![rpiwriting.png](assets/rpiwriting.png)
 
-Ok now let's safely eject the sd card and start setting everything over our raspberry pi.
-
-## Setting up the RaspberryPi 4 and Power On
-
-First we insert the sd card into the raspberry pi 4 which can be found underneath the board.
+1. After clicking write, you will see a loading bar like shown below. This may take a few minutes to an hour to complete. 
 
 ![microsd.png](assets/microsd.png)
 
-Connect the display via USB (To, Power/Capacitive Touch Input) and HDMI ports.
+1. Safely eject the SD card and insert into the Raspberry Pi. 
 
-1. HDMI (Display) to Micro-HDMI (RaspberryPi).
-
+## Setting up the RaspberryPi 4 and Power On
 ![hdmidisplay.png](assets/hdmidisplay.png)
 ![mhdmi.png](assets/mhdmi.png)
 
-2. Micro-USB (Display) to USB (RaspberryPi)
+1. If you're using a screen, connect the display via USB (To, Power/Capacitive Touch Input) and HDMI ports.
 
 ![musbdisplay.png](assets/musbdisplay.png)
 ![usbdisplay.png](assets/usbdisplay.png)
 
-Connecting USB Mic to an usb port.
+1. Connect Micro-USB (Display) to USB (RaspberryPi)
 
 ![mic.png](assets/mic.png)
 ![micusb.png](assets/micusb.png)
 
-Connect the keyboard and mouse, i have a wireless plug and play usb dongle.
+1. Connect the  USB Mic to a Pi USB port.
 
 ![knmusbw.png](assets/knmusbw.png)
 
-Connect the power USB type C.
+1. Connect the keyboard and mouse. We're using a wireless dongle for both keyboard and mouse.
 
 ![typecpower.png](assets/typecpower.png)
 
-Ok looking over everything how they should look like.
+1. Finally, connect the power supply! 
 
 ## Setting up the OS and other dependencies
 
-Ok first power up the device and set up the initial setup, this part would pretty much self-explanatory, but it would have following steps.
-   1. You will be presented with initial option to connect to internet over wifi (or you can connect with Ethernet cable).
-   2. Select the keyboard layout according and also the timezone.
-   3. This bit is important you need make a user account.
-   ![useraccount.png](assets/useraccount.png)
-      
-**note** instead of Require my password to log in select the login automatically.
-      
-### Now to install other dependencies.
-Open terminal on desktop.
+1. Once the Pi boots up, input your SSID and WiFi password. If you prefer, you can also connect to the Internet via an Ethernet cable.
 
-let's make a directory using terminal.
+1. Select the keyboard layout for your location and the timezone.
+
+![useraccount.png](assets/useraccount.png)
+
+1. Change your password (YES please do this step, it is important for security purposes).
+            
+### Install Dependencies
+1. Open the terminal.
+
+1. Make a directory to store our project by running the following commands
 ```bash
-mkdir work
-cd work
+mkdir live-captioning
+cd live-captioning
 ```
-### Now we setup .Net Framework as the code is in C#
+1.Setup the .NET Framework by running the following commands:
 ```bash
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current
 ```
-Once the files are installed we set the environment variables.
+1. Once the files are installed we set the environment variables by running the following commands:
 ```bash
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
 echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
 source ~/.bashrc
 ```
-Check and verify the installation
+1. Check and verify the installation
 ```bash
 dotnet --version
 ```
-### Now we will be installing the dependencies for the Azure speech sdk.
+1. Finally, install the Azure Cognitive Services speech-to-text dependencies with the following commands: 
 
 ```bash
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev libasound2 wget 
 ```
-There is a high chance you will be having trouble in installing libssl1.0.0 as its not available for ubuntu 22. But its one of the core required dependencies.
-What we will do is manually install it.
+
+   * We need to manually install the libssl1.0.0 as its not available for ubuntu 22. Run the following command:
 ```bash
 wget http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1n-0+deb11u1_arm64.deb
 ```
-and we simply install from the file
+* Next, install from file:
 ```bash
 sudo apt install -f ./libssl1.1_1.1.1n-0+deb11u1_arm64.deb
 ```
-## Lets Signup for azure cognitive services and get our api keys.
+## Azure Cognitive Services Setup 
+Now it's time to sign up for Azure Cognitive Services and get our API keys!
 
-https://azure.microsoft.com/en-us/free/
+1. Sign up for [a free Azure account here](https://aka.ms/azure/live-captions). Your free trial lasts 30 days and includes $200 Azure credits.
 
-You can sign up for a free trial account with $200 azure credit for 30 days.o
-
-once presented with the dashboard. Select more service (assuming you will already have trial  subscription setup)
 ![azuredash.png](assets/azuredash.png)
-
-now select the cognitive services.
+1. Once you're logged in to your Azure dashboard, select 'more service'.
 
 ![cogserv.png](assets/cogserv.png)
-
-Now create a new speech service
+1. Select (or search for) Cognitive Services.
 
 ![speechserv.png](assets/speechserv.png)
 
-What you will need from here once setup speech service. are the keys and the region.
-copy the key anyone would do and copy the location region.
+1. Create a new speech service.
 
+1. From here, you will need the keys and the region to set up speech-to-text on the Raspberry Pi.
+ 
 ![keyslocation.png](assets/keyslocation.png)
+1. Copy one of the keys (any of them will work) and the location region.
 
-## Running the code on the RaspberryPi
+## Run the Project!
 
-Download install git
+1. If you don't already have it, install git with the following command:
 
 ```bash
 sudo apt install git
 ```
 
-lets go back in the folder we created
+1. Navigate to your project folder that we created earlier:
 ```bash
-cd work
+cd live-captioning
 ```
-clone this repository, go to the folder with the code
+1. Clone this repository and navigate to t: 
 ```bash
-git clone https://github.com/m-mohsin-ali/closed-captioning-azure-speech-ai
+git clone https://github.com/jenfoxbot/closed-captioning-azure-speech-ai
+```
+1. Navitage to the folder that contains project code: 
+```bash
 cd closed-captioning-azure-speech-ai/code/AzureSpeechCC
-```
-Now lets put your keys in the code
+
+1. Add your Cognitive Services keys keys to the code:
 ```bash
 nano Program.cs
 ```
@@ -174,19 +172,25 @@ nano Program.cs
         static string YourServiceRegion = "Enter your Region here";
 ...
 ```
-Now press crtl+x and save/overwrite.
+1. Press CTRL+X and save/overwrite the file.
 
-let's add the Azure Speech Sdk lib/package to the code directory
+1. Add the Azure Speech SDK lib/package to the code directory by running the following:
 ```bash
 dotnet add package Microsoft.CognitiveServices.Speech
 ```
-Now lets run and see the magic
+1. We did it!! Let's run the code and see our wizardry in action:
 ```bash
 dotnet build
 dotnet run
 ```
 
-https://user-images.githubusercontent.com/46184494/172901241-2b21438e-2600-4397-a6b6-4cd5b5c7c63d.mp4
+Test out different audio sources or try different sounds and voices.
+
+## Going Further
+1. Make the project portable by getting an enclosure for the Pi, a small touch screen, and a USB-C battery.
+2. Travel plans? Convert the project into a translator by selecting different language inputs and outputs from Cognitive Services!
+
+Show us your creations by tagging us: @MakersAtMicrosoft, or using the hashtag #AzureLiveCaptions
 
 
 
