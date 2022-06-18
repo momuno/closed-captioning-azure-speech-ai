@@ -21,8 +21,7 @@ Speech is captured via a USB microphone and run through a .NET framework which c
 4. [Pair of Keyboard and Mouse](https://www.amazon.eg/-/en/HP-CS700-Wireless-Keyboard-Mouse/dp/B07M82KFVB)
    : A basic keyboard and mouse for using as input devices on a Raspberry Pi.
    
-## Download and Install RaspberryPi 4 OS
-
+## Download RaspberryPi 4 OS
 
 1. On your desktop computer, download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
    
@@ -30,7 +29,7 @@ Speech is captured via a USB microphone and run through a .NET framework which c
 
 1. Run Raspberry Pi Imager. The home screen will appear.
 
-    ![RPiIMain.png](assets/RPiIMain.png)
+    <img src="assets/RPiIMain.png" width="400">
 
 2. Select **'CHOOSE STORAGE'**.
 
@@ -38,33 +37,33 @@ Speech is captured via a USB microphone and run through a .NET framework which c
   
 4. Select the connected microSD card as your storage device.
 
-    ![rpisd.png](assets/rpisd.png)
+    <img src="assets/rpisd.png" width="400">
     
 5. On the home screen, select **'CHOOSE OS'**.
    
-    ![rpchooseos.png](assets/rpchooseos.png)
+    <img src="assets/rpchooseos.png" width="400">
 
 6. Select in this order: **'Other general-purpose OS'** > **'Ubuntu'** > **'Ubuntu Desktop 22.04 LTS (RPi 4/400)'**
 
-    ![rposelection.png](assets/rposselection.PNG)
+    <img src="assets/rpiotheros.png" width="400">
+    <img src="assets/rpubuntu.png" width="400">
+    <img src="assets/ubuntu22.png" width="400">
 
     > Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
 
-1. On the home screen, select **'WRITE'**.
+7. On the home screen, select **'WRITE'**.
 
-    ![rpwrite.png](assets/rpwrite.PNG)
+    <img src="assets/rpwrite.png" width="400">
 
-1. A loading bar will appear.  
+8. A loading bar will appear.  
 
-    ![rpiwriting.png](assets/rpiwriting.png)
+    <img src="assets/rpiwriting.png" width="400">
 
     > NOTE: The Writing may take a few minutes to an hour to complete.
 
-1. Safely eject the SD card and insert it into the Raspberry Pi. 
+9. Safely eject the SD card and insert it into the Raspberry Pi. 
  
-    ![microsd.png](assets/microsd.png)
-
-
+    <img src="assets/microsd.png" width="400">
 
 ## Setting up the RaspberryPi 4 and Power On
 ![hdmidisplay.png](assets/hdmidisplay.png)
