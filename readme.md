@@ -38,8 +38,6 @@ Speech is captured via a USB microphone and run through a .NET framework which c
     <img src="assets/rpisd.png" width="500">
     
 6. On the home screen, select **'CHOOSE OS'**.
-   
-    <img src="assets/rpchooseos.png" width="500">
 
 7. Select in this order: **'Other general-purpose OS'** > **'Ubuntu'** > **'Ubuntu Desktop 22.04 LTS (RPi 4/400)'**
 
@@ -50,8 +48,6 @@ Speech is captured via a USB microphone and run through a .NET framework which c
     > Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
 
 8. On the home screen, select **'WRITE'**.
-
-    <img src="assets/rpwrite.PNG" width="500">
 
 9. A loading bar will appear.  
 
