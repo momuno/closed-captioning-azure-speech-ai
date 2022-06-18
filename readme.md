@@ -17,7 +17,7 @@ Speech is captured via a USB microphone and run through a .NET framework which c
    : Any USB plug and play device works.
 3. [Lcd Screen](https://thepihut.com/products/7-capacitive-touchscreen-lcd-low-power-800x480)
    : We are using this for rich text quality. You can use any other compatible displays.
-   : You may also skip the scree and access the Pi via SSH.
+   : You may also skip the screen and access the Pi via SSH.
 4. [Pair of Keyboard and Mouse](https://www.amazon.eg/-/en/HP-CS700-Wireless-Keyboard-Mouse/dp/B07M82KFVB)
    : A basic keyboard and mouse for using as input devices on a Raspberry Pi.
    
@@ -64,28 +64,29 @@ Speech is captured via a USB microphone and run through a .NET framework which c
     <img src="assets/microsd.png" width="500">
 
 ## Setting up the RaspberryPi 4 and Power On
-![hdmidisplay.png](assets/hdmidisplay.png)
-![mhdmi.png](assets/mhdmi.png)
 
 1. If you're using a screen, connect the display via USB (To, Power/Capacitive Touch Input) and HDMI ports.
 
-![musbdisplay.png](assets/musbdisplay.png)
-![usbdisplay.png](assets/usbdisplay.png)
+    <img src="assets/hdmidisplay.png" height="270"> 
+    <img src="assets/mhdmi.png" height="270">
 
 1. Connect Micro-USB (Display) to USB (RaspberryPi)
 
-![mic.png](assets/mic.png)
-![micusb.png](assets/micusb.png)
+    <img src="assets/musbdisplay.png" height="260">
+    <img src="assets/usbdisplay.png" height="260">
 
-1. Connect the  USB Mic to a Pi USB port.
+2. Connect the  USB Mic to a Pi USB port.
 
-![knmusbw.png](assets/knmusbw.png)
+    <img src="assets/mic.png" height="270">
+    <img src="assets/micusb.png" height="270">
 
 1. Connect the keyboard and mouse. We're using a wireless dongle for both keyboard and mouse.
 
-![typecpower.png](assets/typecpower.png)
+    <img src="assets/knmusbw.png" width="250">
 
 1. Finally, connect the power supply! 
+
+    <img src="assets/typecpower.png" width="250">
 
 ## Setting up the OS and other dependencies
 
