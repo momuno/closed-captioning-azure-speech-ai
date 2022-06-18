@@ -28,42 +28,43 @@ Speech is captured via a USB microphone and run through a .NET framework which c
    
     ![rpdownloadimager.png](assets/rpdownloadimager.png)
 
-1. Run Raspberry Pi Imager. The main screen shown below will appear.
+1. Run Raspberry Pi Imager. The home screen will appear.
 
     ![RPiIMain.png](assets/RPiIMain.png)
 
-1. Select **'CHOOSE STORAGE'**.
+2. Select **'CHOOSE STORAGE'**.
 
-1. Insert the microSD card into your computer (or via a card reader).
+3. Insert the microSD card into your computer (or via a card reader).
   
-1. Select the connected microSD card as your storage device.
+4. Select the connected microSD card as your storage device.
 
     ![rpisd.png](assets/rpisd.png)
     
-1. Select **'CHOOSE OS'**.
+5. On the home screen, select **'CHOOSE OS'**.
    
     ![rpchooseos.png](assets/rpchooseos.png)
 
+6. Select in this order: **'Other general-purpose OS'** > **'Ubuntu'** > **'Ubuntu Desktop 22.04 LTS (RPi 4/400)'**
+
+    ![rposelection.png](assets/rposselection.png)
+
+    > Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
+
+1. On the home screen, select **'WRITE'**.
+
+    ![rpwrite.png](assets/rpwrite.png)
+
+1. A loading bar will appear.  
+
+    ![rpiwriting.png](assets/rpiwriting.png)
+
+    > NOTE: The Writing may take a few minutes to an hour to complete.
+
+1. Safely eject the SD card and insert it into the Raspberry Pi. 
+ 
+    ![microsd.png](assets/microsd.png)
 
 
-    ![rpiotheros.png](assets/rpiotheros.png)
-
-    ![rpubuntu.png](assets/rpubuntu.png)
-2. We will be using Ubuntu Desktop 64 bit. Select the "Other available OS. 
-
-   | Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
-
-![ubuntu22.png](assets/ubuntu22.png)
-
-1. Select the ubuntu 22 64 bit version.
-
-![rpiwriting.png](assets/rpiwriting.png)
-
-1. After clicking write, you will see a loading bar like shown below. This may take a few minutes to an hour to complete. 
-
-![microsd.png](assets/microsd.png)
-
-1. Safely eject the SD card and insert into the Raspberry Pi. 
 
 ## Setting up the RaspberryPi 4 and Power On
 ![hdmidisplay.png](assets/hdmidisplay.png)
