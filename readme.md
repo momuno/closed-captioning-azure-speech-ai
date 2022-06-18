@@ -26,7 +26,7 @@ Speech is captured via a USB microphone and run through a .NET framework which c
 
 1. On your desktop computer, download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
    
-    ![rpdownloadimager.png](assets/rpdownloadimager.png)
+    ![rpdownloadimager.png](assets/rpdownloadimager.PNG)
 
 1. Run Raspberry Pi Imager. The home screen will appear.
 
@@ -46,13 +46,13 @@ Speech is captured via a USB microphone and run through a .NET framework which c
 
 6. Select in this order: **'Other general-purpose OS'** > **'Ubuntu'** > **'Ubuntu Desktop 22.04 LTS (RPi 4/400)'**
 
-    ![rposelection.png](assets/rposselection.png)
+    ![rposelection.png](assets/rposselection.PNG)
 
     > Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
 
 1. On the home screen, select **'WRITE'**.
 
-    ![rpwrite.png](assets/rpwrite.png)
+    ![rpwrite.png](assets/rpwrite.PNG)
 
 1. A loading bar will appear.  
 
