@@ -24,46 +24,44 @@ Speech is captured via a USB microphone and run through a .NET framework which c
 ## Download RaspberryPi 4 OS
 
 1. On your desktop computer, download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
-   
-    ![rpdownloadimager.png](assets/rpdownloadimager.PNG)
 
-1. Run Raspberry Pi Imager. The home screen will appear.
+2. Run Raspberry Pi Imager. The home screen will appear.
 
-    <img src="assets/RPiIMain.png" width="400">
+    <img src="assets/RPiIMain.png" width="500">
 
-2. Select **'CHOOSE STORAGE'**.
+3. Select **'CHOOSE STORAGE'**.
 
-3. Insert the microSD card into your computer (or via a card reader).
+4. Insert the microSD card into your computer (or via a card reader).
   
-4. Select the connected microSD card as your storage device.
+5. Select the connected microSD card as your storage device.
 
-    <img src="assets/rpisd.png" width="400">
+    <img src="assets/rpisd.png" width="500">
     
-5. On the home screen, select **'CHOOSE OS'**.
+6. On the home screen, select **'CHOOSE OS'**.
    
-    <img src="assets/rpchooseos.png" width="400">
+    <img src="assets/rpchooseos.png" width="500">
 
-6. Select in this order: **'Other general-purpose OS'** > **'Ubuntu'** > **'Ubuntu Desktop 22.04 LTS (RPi 4/400)'**
+7. Select in this order: **'Other general-purpose OS'** > **'Ubuntu'** > **'Ubuntu Desktop 22.04 LTS (RPi 4/400)'**
 
-    <img src="assets/rpiotheros.png" width="400">
-    <img src="assets/rpubuntu.png" width="400">
-    <img src="assets/ubuntu22.png" width="400">
+    <img src="assets/rpiotheros.png" width="500">
+    <img src="assets/rpubuntu.png" width="500">
+    <img src="assets/ubuntu22.png" width="500">
 
     > Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
 
-7. On the home screen, select **'WRITE'**.
+8. On the home screen, select **'WRITE'**.
 
-    <img src="assets/rpwrite.png" width="400">
+    <img src="assets/rpwrite.PNG" width="500">
 
-8. A loading bar will appear.  
+9. A loading bar will appear.  
 
-    <img src="assets/rpiwriting.png" width="400">
+    <img src="assets/rpiwriting.png" width="500">
 
     > NOTE: The Writing may take a few minutes to an hour to complete.
 
-9. Safely eject the SD card and insert it into the Raspberry Pi. 
+10. Safely eject the SD card and insert it into the Raspberry Pi. 
  
-    <img src="assets/microsd.png" width="400">
+    <img src="assets/microsd.png" width="500">
 
 ## Setting up the RaspberryPi 4 and Power On
 ![hdmidisplay.png](assets/hdmidisplay.png)
