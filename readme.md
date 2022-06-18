@@ -1,9 +1,8 @@
 # Raspberry Pi Live Closed Captioning with Azure Cognitive Services
 
-https://user-images.githubusercontent.com/46184494/172901241-2b21438e-2600-4397-a6b6-4cd5b5c7c63d.mp4
-
-
 This project uses Microsoft Azure Cognitive Services speech recognition to generate real-time captions on a Raspberry Pi. You can also run this project in a .NET framework on a laptop or computer!
+
+https://user-images.githubusercontent.com/46184494/172901241-2b21438e-2600-4397-a6b6-4cd5b5c7c63d.mp4
 
 Speech is captured via a USB microphone and run through a .NET framework which calls Azure Cognitive Services speech-to-text service, which then displays convert text in real-time captions to an LCD screen. You can also generate captions on [a remote screen via SSH](https://github.com/microsoft/rpi-resources). 
 
@@ -23,17 +22,34 @@ Speech is captured via a USB microphone and run through a .NET framework which c
    : A basic keyboard and mouse for using as input devices on a Raspberry Pi.
    
 ## Download and Install RaspberryPi 4 OS
-![RPiIMain.png](assets/RPiIMain.png)
+
 
 1. On your desktop computer, download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
+   
+    ![rpdownloadimager.png](assets/rpdownloadimager.png)
 
-![rpisd.png](assets/rpisd.png)
+1. Run Raspberry Pi Imager. The main screen shown below will appear.
 
-1. Select storage device, insert the microSD card into your computer (or via a card reader). Select the connected device as storage device.
+    ![RPiIMain.png](assets/RPiIMain.png)
 
-![rpiotheros.png](assets/rpiotheros.png)
+1. Select **'CHOOSE STORAGE'**.
 
-1. We will be using Ubuntu Desktop 64 bit. Select the "Other available OS. 
+1. Insert the microSD card into your computer (or via a card reader).
+  
+1. Select the connected microSD card as your storage device.
+
+    ![rpisd.png](assets/rpisd.png)
+    
+1. Select **'CHOOSE OS'**.
+   
+    ![rpchooseos.png](assets/rpchooseos.png)
+
+
+
+    ![rpiotheros.png](assets/rpiotheros.png)
+
+    ![rpubuntu.png](assets/rpubuntu.png)
+2. We will be using Ubuntu Desktop 64 bit. Select the "Other available OS. 
 
    | Note: Although Raspbian does come in a 64bit version, Ubuntu has better support for the architecture and available software.
 
